@@ -32,12 +32,14 @@ def all_groups():
 
 def set_default(chat_id: int) -> None:
     global GROUPS
-    GROUPS[chat_id] = {}
-    GROUPS[chat_id]["is_playing"] = False
-    GROUPS[chat_id]["now_playing"] = None
-    GROUPS[chat_id]["is_video"] = False
-    GROUPS[chat_id]["loop"] = False
-    GROUPS[chat_id]["lang"] = config.LANGUAGE
+    GROUPS[chat_id] = {
+        'is_playing': False,
+        'now_playing': None,
+        'is_video': False,
+        'loop': False,
+        'lang': config.LANGUAGE,
+    }
+
     GROUPS[chat_id]["queue"] = Queue()
 
 
